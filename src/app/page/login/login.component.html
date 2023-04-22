@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="logo">
+    <img src="assets/logo/logoHeader-black.png" alt="">
+  </div>
+  <div class="text-center mt-4 name">
+    VIZE - CRM
+  </div>
+  <div class="text-center mt-3">
+    <input type="text" placeholder="username" [(ngModel)]="loginForm.username">
+    <input type="password" placeholder="Password" [(ngModel)]="loginForm.password">
+  </div>
+  <button class="btn btn-active mt-3" (click)="login()">Login</button>
+</div>
