@@ -38,6 +38,5 @@ input:focus{
 input{
   border-radius: 4px 0 0 4px;
   font-size: 16px;
-  color: white;
   transition: none;
 }
