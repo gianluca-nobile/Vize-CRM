@@ -1,0 +1,20 @@
+.card{
+  height: 100%;
+  background-color: var(--bg-color2);
+  border-radius: 12px;
+
+}
+.heading {
+  font-size: 1.8rem;
+  color: #fcfcfc;
+  font-weight: 500;
+  text-align: left;
+}
+
+.table{
+  color: var(--text-color-w);
+}
+
+.thead-dark{
+  background: rgb(155,128,151,1) !important;
+}

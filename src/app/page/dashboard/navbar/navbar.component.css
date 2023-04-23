@@ -1,6 +1,6 @@
 img{
   height: 50px;
 }
-.bg-light{
-  background-color: var(--table-bg-color) !important;
+.bg-dark{
+  background-color: var(--bg-color2) !important;
 }

@@ -7,6 +7,7 @@ import {SharedModule} from "../../shared/shared.module";
 import { NavbarComponent } from './navbar/navbar.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UserListComponent } from './user-list/user-list.component';
     DashboardComponent,
     NavbarComponent,
     CouponComponent,
-    UserListComponent
+    UserListComponent,
+    AnalyticsComponent
   ],
     imports: [
         CommonModule,

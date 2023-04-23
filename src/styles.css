@@ -7,10 +7,12 @@
   padding: 0;
   box-sizing: border-box;
   --bg-color: #12161c;
+  --bg-color2: #0c0f13;
   --active-color: #25be64;
   --inactive-color: #dadde4;
   --new-color: #febf02;
-  --text-color: #141a4e;
+  --text-color-w: #ffffff;
+  --text-color-b: #0c0f13;
   --table-bg-color: #fefefe;
   --table-head-bg-color: #e1e8f2;
   --table-border-color: #edeef2;
@@ -25,7 +27,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  color: #141a4e;
+  color: var(--text-color-w);
   background-color: var(--bg-color);
   font-size: 1.6rem;
 }
@@ -36,7 +38,6 @@ input:focus{
 input{
   border-radius: 4px 0 0 4px;
   font-size: 16px;
-  background-color: var(--section-2);
   color: white;
   transition: none;
 }
