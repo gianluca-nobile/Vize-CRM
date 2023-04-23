@@ -7,27 +7,27 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav w-100">
-      <li class="nav-item" [ngClass]="this.route.url.includes('analytics')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/analytics" href="#">Analytics</a>
+      <li class="nav-item mr-2" [ngClass]="this.route.url.includes('analytics')? 'active': ''">
+        <a class="nav-link" routerLink="/dashboard/analytics" href="#"><i class="bi bi-clipboard2-data-fill mr-1"></i>Analytics</a>
       </li>
-      <li class="nav-item" [ngClass]="this.route.url.includes('user-list')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/user-list" href="#">User List</a>
+      <li class="nav-item mr-2" [ngClass]="this.route.url.includes('user-list')? 'active': ''">
+        <a class="nav-link" routerLink="/dashboard/user-list" href="#"><i class="bi bi-person-lines-fill mr-1"></i>User List</a>
       </li>
-      <li class="nav-item" [ngClass]="this.route.url.includes('coupon')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/coupon" href="#">Coupon</a>
+      <li class="nav-item mr-2" [ngClass]="this.route.url.includes('coupon')? 'active': ''">
+        <a class="nav-link" routerLink="/dashboard/coupon" href="#"><i class="bi bi-percent mr-1"></i>Coupon</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown mr-2">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Logout</a>
+          <a class="dropdown-item" href="#">Logout</a>
         </div>
       </li>
       <li class="nav-item ml-auto">
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-right mr-1"></i>Logout</a>
       </li>
     </ul>
   </div>
