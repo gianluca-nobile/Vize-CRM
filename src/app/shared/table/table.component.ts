@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -6,6 +6,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit{
+
+  @Input() title:string | undefined;
+  @Input() columns: Array<object> | any;
+  @Input() items: any;
+  @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
+  @Output() enableDisable = new EventEmitter();
+
   ngOnInit(): void {
 
   }
