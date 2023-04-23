@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class UserListComponent {
 
+  columns: Array<object> | undefined
+  userLists: any;
+
+  ngOnInit(): void {
+    this.generateColumn();
+    this.userLists = []
+  }
+
+  generateColumn(){
+    this.columns = [
+      {name: 'name', type: 'string'},
+      {name: 'name1', type: 'string'},
+      {name: 'name2', type: 'string'},
+      {name: 'usage', type: 'number'},
+      {name: 'sales', type: 'string'},
+      {name: 'status', type: 'boolean'},
+      {name: 'active', type: 'enableDisable'},
+      {name: 'action', type: 'delete'}
+    ]
+  }
+
 }

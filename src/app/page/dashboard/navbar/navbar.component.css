@@ -2,5 +2,5 @@ img{
   height: 50px;
 }
 .bg-light{
-  background-color: var(--table-head-bg-color);
+  background-color: var(--table-bg-color) !important;
 }

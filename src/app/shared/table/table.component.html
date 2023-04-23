@@ -14,49 +14,56 @@
           </tr>
           </thead>
           <tbody class="table__tbody text-center">
-<!--          table-row&#45;&#45;red  da aggiungere al tr-->
-          <tr *ngFor="let item of items, let index = index" class="table-row">
-<!--            <td class="table-row__td">-->
-<!--              <div class="table-row__img"></div>-->
-<!--              <div class="table-row__info">-->
-<!--                <p class="table-row__name">Christin Ericssen</p>-->
-<!--                <span class="table-row__small">CFO</span>-->
-<!--              </div>-->
-<!--            </td>-->
-<!--            <td data-column="Policy" class="table-row__td">-->
-<!--              <div class="">-->
-<!--                <p class="table-row__policy">$5,000</p>-->
-<!--                <span class="table-row__small">Basic Policy</span>-->
-<!--              </div>-->
-<!--            </td>-->
-<!--            <td data-column="Policy status" class="table-row__td">-->
-<!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
-<!--            </td>-->
-            <ng-container *ngFor="let col of columns">
-              <ng-container [ngSwitch]="col.type">
-                <td *ngSwitchCase="'boolean'" [attr.data-column]="col.name" class="table-row__td">
-                  <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
-                </td>
-                <td *ngSwitchCase="'enableDisable'" [attr.data-column]="col.name" class="table-row__td">
+          <ng-container *ngIf="items?.length > 0">
+            <!--          table-row&#45;&#45;red  da aggiungere al tr-->
+            <tr *ngFor="let item of items, let index = index" class="table-row">
+              <!--            <td class="table-row__td">-->
+              <!--              <div class="table-row__img"></div>-->
+              <!--              <div class="table-row__info">-->
+              <!--                <p class="table-row__name">Christin Ericssen</p>-->
+              <!--                <span class="table-row__small">CFO</span>-->
+              <!--              </div>-->
+              <!--            </td>-->
+              <!--            <td data-column="Policy" class="table-row__td">-->
+              <!--              <div class="">-->
+              <!--                <p class="table-row__policy">$5,000</p>-->
+              <!--                <span class="table-row__small">Basic Policy</span>-->
+              <!--              </div>-->
+              <!--            </td>-->
+              <!--            <td data-column="Policy status" class="table-row__td">-->
+              <!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
+              <!--            </td>-->
+              <ng-container *ngFor="let col of columns">
+                <ng-container [ngSwitch]="col.type">
+                  <td *ngSwitchCase="'boolean'" [attr.data-column]="col.name" class="table-row__td">
+                    <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
+                  </td>
+                  <td *ngSwitchCase="'enableDisable'" [attr.data-column]="col.name" class="table-row__td">
 
-                  <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
+                    <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
 
-                  <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success p-2 mx-1"><i class="bi bi-check-circle-fill"></i></button>
-                </td>
-                <td *ngSwitchCase="'delete'" class="table-row__td">
-                  <button (click)="delete.emit(index)" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
-                </td>
-                <td *ngSwitchCase="'edit'" class="table-row__td">
-                  <button (click)="edit.emit(index)" class="btn btn-outline-warning p-2 mx-1"><i class="bi bi-pencil-fill"></i></button>
-                </td>
-                <td *ngSwitchDefault [attr.data-column]="col.name" class="table-row__td">
-                  {{item[col.name]}}
-                </td>
+                    <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success p-2 mx-1"><i class="bi bi-check-circle-fill"></i></button>
+                  </td>
+                  <td *ngSwitchCase="'delete'" class="table-row__td">
+                    <button (click)="delete.emit(index)" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                  </td>
+                  <td *ngSwitchCase="'edit'" class="table-row__td">
+                    <button (click)="edit.emit(index)" class="btn btn-outline-warning p-2 mx-1"><i class="bi bi-pencil-fill"></i></button>
+                  </td>
+                  <td *ngSwitchDefault [attr.data-column]="col.name" class="table-row__td">
+                    {{item[col.name]}}
+                  </td>
+                </ng-container>
               </ng-container>
-            </ng-container>
-          </tr>
+            </tr>
+          </ng-container>
           </tbody>
         </table>
+        <ng-container *ngIf="items?.length === 0">
+          <div class="alert alert-info w-100" role="alert">
+            <b><i class="bi bi-info-circle-fill mr-2"></i>No item !</b>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
