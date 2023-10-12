@@ -29,19 +29,19 @@ export class CouponComponent implements OnInit{
 
   generateColumn(){
     this.columns = [
-      {name: 'name', type: 'string'},
-      {name: 'name1', type: 'string'},
-      {name: 'name2', type: 'string'},
-      {name: 'usage', type: 'number'},
-      {name: 'sales', type: 'string'},
-      {name: 'status', type: 'boolean'},
-      {name: 'active', type: 'enableDisable'},
-      {name: 'action', type: 'delete'}
+      {name: 'name', type: ['string']},
+      {name: 'name1', type: ['string']},
+      {name: 'name2', type: ['string']},
+      {name: 'usage', type: ['string']},
+      {name: 'sales', type: ['string']},
+      {name: 'status', type: ['boolean']},
+      {name: 'active', type: ['enableDisable']},
+      {name: 'action', type: ['edit','delete']}
     ]
   }
 
   getCoupon(){
-    this.request.post('admin/coupons/all', '').subscribe((res) => {
+    this.request.post('coupons/all', '').subscribe((res) => {
       console.log(res)
     })
   }

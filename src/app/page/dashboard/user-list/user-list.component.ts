@@ -17,14 +17,14 @@ export class UserListComponent {
 
   generateColumn(){
     this.columns = [
-      {name: 'name', type: 'string'},
-      {name: 'name1', type: 'string'},
-      {name: 'name2', type: 'string'},
-      {name: 'usage', type: 'number'},
-      {name: 'sales', type: 'string'},
-      {name: 'status', type: 'boolean'},
-      {name: 'active', type: 'enableDisable'},
-      {name: 'action', type: 'delete'}
+      {name: 'name', type: ['string']},
+      {name: 'name1', type: ['string']},
+      {name: 'name2', type: ['string']},
+      {name: 'usage', type: ['string']},
+      {name: 'sales', type: ['string']},
+      {name: 'status', type: ['boolean']},
+      {name: 'active', type: ['enableDisable']},
+      {name: 'action', type: ['delete']}
     ]
   }
 

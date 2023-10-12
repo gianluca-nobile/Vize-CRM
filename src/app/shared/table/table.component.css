@@ -29,15 +29,15 @@ GENERAL
 }
 
 .table-row {
-  border-bottom: 1px solid var(--inactive-color);
-  background-color: var(--table-bg-color);
+  border-bottom: 1px solid var(--border-card-color);
+  background-color: var(--card);
 }
 .table-row:hover {
-  background-color: var(--table-head-bg-color);
+  background-color: var(--card-hover);
 }
-.table__th:hover {
-  color: #01b9d1;
-}
+/*.table__th:hover {*/
+/*  color: var(--text-color2);*/
+/*}*/
 
 .table--select-all {
   width: 18px;
@@ -49,7 +49,7 @@ GENERAL
 .table-row__td {
   padding: 12px 8px !important;
   vertical-align: middle !important;
-  color: #53646f;
+  color: var(--text-color2);
   font-size: 16px;
   font-weight: 400;
   position:relative;
@@ -235,7 +235,7 @@ GENERAL
   .table-row {
     display: inline-block;
     border: 0;
-    background-color: #fff;
+    background-color:var(--card);
     width: calc(33.3% - 16px);
     margin-right: 10px;
     margin-bottom: 10px;
@@ -261,7 +261,7 @@ GENERAL
   }
 
   .table-row__td {
-    display: block;
+    display: block !important;
     text-align: center;
     padding: 8px !important;
   }
@@ -295,5 +295,9 @@ GENERAL
 }
 
 i{
-  font-size: 25px;
+  font-size: 16px;
+}
+
+button{
+  border-radius: 1rem;
 }

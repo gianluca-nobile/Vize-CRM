@@ -1,6 +1,18 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
 img{
   height: 50px;
 }
 .bg-dark{
   background-color: var(--bg-color2) !important;
+}
+.navbar-dark .navbar-toggler{
+  border: none;
+  font-size: 16px;
+}
+.navbar-dark .navbar-nav .nav-link{
+  font-size: 18px;
 }

@@ -7,7 +7,6 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class TableComponent implements OnInit{
 
-  @Input() title:string | undefined;
   @Input() columns: Array<object> | any;
   @Input() items: any;
   @Output() edit = new EventEmitter();

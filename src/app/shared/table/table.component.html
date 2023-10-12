@@ -1,9 +1,5 @@
-<div class="container">
-  <div class="row row--top-40">
-    <div class="col-md-12">
-      <h2 class="row__title">{{title}} ({{items?.length}})</h2>
-    </div>
-  </div>
+<div>
+
   <div class="row row--top-20">
     <div class="col-md-12">
       <div class="table-container">
@@ -34,26 +30,27 @@
               <!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
               <!--            </td>-->
               <ng-container *ngFor="let col of columns">
-                <ng-container [ngSwitch]="col.type">
-                  <td *ngSwitchCase="'boolean'" [attr.data-column]="col.name" class="table-row__td">
-                    <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
-                  </td>
-                  <td *ngSwitchCase="'enableDisable'" [attr.data-column]="col.name" class="table-row__td">
+                <td [attr.data-column]="col.name" class="table-row__td" [ngClass]="col.type.length > 1? 'd-flex justify-content-center' : ''">
+                  <ng-container *ngFor="let type of col.type">
+                    <div *ngIf="type === 'boolean'">
+                      <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
+                    </div>
+                    <div *ngIf="type === 'enableDisable'">
+                      <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
 
-                    <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
-
-                    <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success p-2 mx-1"><i class="bi bi-check-circle-fill"></i></button>
-                  </td>
-                  <td *ngSwitchCase="'delete'" class="table-row__td">
-                    <button (click)="delete.emit(index)" class="btn btn-outline-danger p-2 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
-                  </td>
-                  <td *ngSwitchCase="'edit'" class="table-row__td">
-                    <button (click)="edit.emit(index)" class="btn btn-outline-warning p-2 mx-1"><i class="bi bi-pencil-fill"></i></button>
-                  </td>
-                  <td *ngSwitchDefault [attr.data-column]="col.name" class="table-row__td">
-                    {{item[col.name]}}
-                  </td>
-                </ng-container>
+                      <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
+                    </div>
+                    <div *ngIf="type === 'delete'">
+                      <button (click)="delete.emit(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                    </div>
+                    <div *ngIf="type === 'edit'">
+                      <button (click)="edit.emit(index)" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <div *ngIf="type === 'string'">
+                      {{item[col.name]}}
+                    </div>
+                  </ng-container>
+                </td>
               </ng-container>
             </tr>
           </ng-container>

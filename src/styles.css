@@ -16,9 +16,16 @@
   --table-bg-color: #fefefe;
   --table-head-bg-color: #e1e8f2;
   --table-border-color: #edeef2;
-  --hover-bg-color: #c457d4;
   --hover-bg-color-vecchio: #fb4f83;
   --hover-text-color: #ffffff;
+  --vz-primary: #c457d4;
+  --text-color: #fafafa;
+  --text-color2: #e8eaed;
+  --bar2: #0c0f13;
+  --card: #1C1C1F;
+  --card-hover: #222224;
+  --border-card: 1px solid rgba(255, 255, 255, 0.12);
+  --border-card-color: rgba(255, 255, 255, 0.12);
 }
 html {
   font-size: 10px;
@@ -29,7 +36,7 @@ body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   color: var(--text-color-w);
-  background-color: var(--bg-color);
+  background-color: var(--bar2);
   font-size: 1.6rem;
 }
 input:focus{

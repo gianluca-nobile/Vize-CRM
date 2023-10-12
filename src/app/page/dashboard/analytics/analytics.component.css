@@ -1,8 +1,8 @@
 .card{
   height: 100%;
-  background-color: var(--bg-color2);
+  background: var(--card);
+  border: var(--border-card);
   border-radius: 12px;
-
 }
 .heading {
   font-size: 1.8rem;

@@ -1,1 +1,2 @@
-<app-table [title]="'Coupon'" [columns]="columns" [items]="coupons"></app-table>
+<app-top-bar [title]="'Coupon'" [items]="coupons" (refresh)="getCoupon()"></app-top-bar>
+<app-table [columns]="columns" [items]="coupons"></app-table>

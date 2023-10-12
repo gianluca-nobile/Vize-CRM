@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 a {
-  color: var(--hover-bg-color);
+  color: var(--vz-primary);
   text-decoration: none;
 }
 
@@ -31,7 +31,7 @@ a {
   font-size: 5rem;
 }
 .span-blue {
-  color: var(--hover-bg-color);
+  color: var(--vz-primary);
 }
 .signup-container,
 .signup-form {
@@ -65,13 +65,13 @@ a {
   width: 100%;
 }
 .input-text:focus {
-  outline-color: var(--hover-bg-color);
+  outline-color: var(--vz-primary);
 }
 
 .btn {
   padding: 2rem 3rem;
   border: none;
-  background: var(--hover-bg-color);
+  background: var(--vz-primary);
   color: #fff;
   border-radius: 1rem;
   cursor: pointer;
@@ -89,7 +89,7 @@ a {
   box-shadow: none;
 }
 .btn-login:hover {
-  background: var(--hover-bg-color);
+  background: var(--vz-primary);
 }
 .inp {
   position: relative;
@@ -113,7 +113,7 @@ a {
   transform: scale(0.75);
 }
 .input-text:focus + .label {
-  color: var(--hover-bg-color);
+  color: var(--vz-primary);
 }
 
 .input-icon {

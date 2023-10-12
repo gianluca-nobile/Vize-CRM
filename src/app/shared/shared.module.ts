@@ -4,15 +4,18 @@ import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
 import { TableComponent } from './table/table.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 
 @NgModule({
     declarations: [
         SharedComponent,
-        TableComponent
+        TableComponent,
+        TopBarComponent
     ],
     exports: [
-        TableComponent
+        TableComponent,
+        TopBarComponent
     ],
     imports: [
         CommonModule,
