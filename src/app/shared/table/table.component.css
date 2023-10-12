@@ -247,7 +247,7 @@ GENERAL
   }
 
   .table-row__td:before{
-    content:attr(data-column);
+    content:attr(data-column)":";
     color: #9eabb4;
     font-weight: 500;
     font-size: 12px;
@@ -261,9 +261,10 @@ GENERAL
   }
 
   .table-row__td {
-    display: block !important;
+    display: flex !important;
     text-align: center;
     padding: 8px !important;
+    justify-content: space-between !important;
   }
   .table-row--red {
     background-color: #fff2f2;

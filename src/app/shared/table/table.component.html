@@ -30,26 +30,28 @@
               <!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
               <!--            </td>-->
               <ng-container *ngFor="let col of columns">
-                <td [attr.data-column]="col.name" class="table-row__td" [ngClass]="col.type.length > 1? 'd-flex justify-content-center' : ''">
-                  <ng-container *ngFor="let type of col.type">
-                    <div *ngIf="type === 'boolean'">
-                      <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
-                    </div>
-                    <div *ngIf="type === 'enableDisable'">
-                      <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
+                <td [attr.data-column]="col.name" class="table-row__td">
+                  <div class="d-flex justify-content-center">
+                    <ng-container *ngFor="let type of col.type" >
+                      <div *ngIf="type === 'boolean'">
+                        <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
+                      </div>
+                      <div *ngIf="type === 'enableDisable'">
+                        <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
 
-                      <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
-                    </div>
-                    <div *ngIf="type === 'delete'">
-                      <button (click)="delete.emit(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
-                    </div>
-                    <div *ngIf="type === 'edit'">
-                      <button (click)="edit.emit(index)" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <div *ngIf="type === 'string'">
-                      {{item[col.name]}}
-                    </div>
-                  </ng-container>
+                        <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
+                      </div>
+                      <div *ngIf="type === 'delete'">
+                        <button (click)="delete.emit(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                      </div>
+                      <div *ngIf="type === 'edit'">
+                        <button (click)="edit.emit(index)" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
+                      </div>
+                      <div *ngIf="type === 'string'">
+                        {{item[col.name]}}
+                      </div>
+                    </ng-container>
+                  </div>
                 </td>
               </ng-container>
             </tr>
