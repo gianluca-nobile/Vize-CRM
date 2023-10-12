@@ -34,10 +34,13 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
   color: var(--text-color-w);
   background-color: var(--bar2);
-  font-size: 1.6rem;
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 1;
 }
 input:focus{
   box-shadow: none !important;

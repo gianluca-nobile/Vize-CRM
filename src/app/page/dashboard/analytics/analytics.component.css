@@ -18,3 +18,15 @@
 .thead-dark{
   background: rgb(155,128,151,1) !important;
 }
+
+/*box*/
+.stats {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.stats i {
+  color: var(--vz-primary);
+  font-size: 60px;
+}
