@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestService {
-
-  url = 'https://vize-backend.herokuapp.com/admin/';
-  prod_url = 'https://vize-backend-prod.herokuapp.com/admin/';
-  private environment: any;
-
-
   constructor(private http: HttpClient) { }
 
   getUrl() {
-    return this.url;
+    return environment.apiUrl;
   }
 
   post(path: string, body: any){

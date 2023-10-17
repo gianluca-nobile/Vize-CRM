@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent {
 
+  showPsw = false;
   loginForm = {username: '', password: ''}
 
   constructor(private route: Router) {

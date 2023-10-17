@@ -31,6 +31,8 @@
   --card-hover: #222224;
   --border-card: 1px solid rgba(255, 255, 255, 0.12);
   --border-card-color: rgba(255, 255, 255, 0.12);
+  --danger: #e36767;
+  --success: #6cdb56
 }
 html {
   font-size: 10px;
@@ -55,4 +57,13 @@ input{
   border-radius: 4px 0 0 4px;
   font-size: 16px;
   transition: none;
+}
+
+.btn-outline-danger{
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.btn-outline-success{
+  color: var(--success);
+  border-color: var(--success);
 }

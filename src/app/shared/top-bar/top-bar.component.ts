@@ -7,6 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class TopBarComponent {
   @Input() title:string | undefined;
+  @Input() buttons: any = undefined;
   @Input() items: any;
   @Output() refresh = new EventEmitter();
 

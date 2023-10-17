@@ -25,7 +25,8 @@ GENERAL
   text-transform: uppercase;
   cursor: pointer;
   border:0 !important;
-  padding: 15px 8px !important;
+  padding: 20px 8px !important;
+  background: var(--card);
 }
 
 .table-row {
@@ -228,6 +229,22 @@ GENERAL
   background-color: #fff2f2;
 }
 
+@media screen and (min-width: 992px){
+  .table-container{
+    background-color: var(--card);
+    border: var(--border-card-color);
+    padding: 0 10px 10px;
+    border-radius: 20px;
+    max-height: 600px;
+    overflow: auto;
+  }
+  .table__thead{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
 @media screen and (max-width: 991px){
   .table__thead {
     display: none;
@@ -236,6 +253,8 @@ GENERAL
     display: inline-block;
     border: 0;
     background-color:var(--card);
+    border-radius: 20px;
+    padding: 10px;
     width: calc(33.3% - 16px);
     margin-right: 10px;
     margin-bottom: 10px;
@@ -286,12 +305,16 @@ GENERAL
 @media screen and (max-width: 680px){
   .table-row {
     width: calc(50% - 16px);
+    border-radius: 20px;
+    padding: 10px;
   }
 }
 
 @media screen and (max-width: 480px){
   .table-row {
     width: 100%;
+    border-radius: 20px;
+    padding: 10px;
   }
 }
 

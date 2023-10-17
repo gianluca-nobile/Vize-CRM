@@ -12,7 +12,14 @@ export class UserListComponent {
 
   ngOnInit(): void {
     this.generateColumn();
-    this.userLists = []
+    this.userLists = [
+      {name: 'prova', name1: 'prova', name2: 'prova', usage: 123, sales: '20%', status: true, active: true,},
+      {name: 'prova1', name1: 'prova', name2: 'prova', usage: 988, sales: '10%', status: false, active: false,},
+      {name: 'prova', name1: 'prova', name2: 'prova', usage: 123, sales: '20%', status: true, active: true,},
+      {name: 'prova1', name1: 'prova', name2: 'prova', usage: 988, sales: '10%', status: false, active: false,},
+      {name: 'prova', name1: 'prova', name2: 'prova', usage: 123, sales: '20%', status: true, active: true,},
+      {name: 'prova1', name1: 'prova', name2: 'prova', usage: 988, sales: '10%', status: false, active: false,}
+    ]
   }
 
   generateColumn(){
@@ -24,7 +31,7 @@ export class UserListComponent {
       {name: 'sales', type: ['string']},
       {name: 'status', type: ['boolean']},
       {name: 'active', type: ['enableDisable']},
-      {name: 'action', type: ['delete']}
+      {name: 'credits', type: ['add', 'remove']}
     ]
   }
 

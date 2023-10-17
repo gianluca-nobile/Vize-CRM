@@ -7,6 +7,15 @@
   z-index: 99;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: 0px 0px 20px #0003;
+  box-shadow: 0 0 20px #0003;
+}
 
+.more-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-btn span{
+  font-size: 14px;
 }

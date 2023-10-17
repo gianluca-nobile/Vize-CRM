@@ -2,7 +2,17 @@
   <div class="col-md-12">
     <div class="d-flex justify-content-between">
       <h2 class="row__title">{{title}} ({{items?.length}})</h2>
-      <button (click)="refresh.emit()" class="btn btn-outline-dark px-3 mx-1"><i class="bi bi-arrow-clockwise"></i></button>
+      <div class="d-flex">
+        <ng-container *ngIf="buttons">
+          <ng-container *ngFor="let btn of buttons">
+            <button aria-expanded="false" class="more-btn btn px-3 mr-3" [ngClass]="btn.class? btn.class : 'btn-success'" (click)="btn.event_()">
+              <i class="{{btn.icon}} mr-0 mr-md-2"></i>
+              <span class="d-md-block d-none">{{btn.title}}</span>
+            </button>
+          </ng-container>
+        </ng-container>
+        <button (click)="refresh.emit()" class="btn btn-dark px-3"><i class="bi bi-arrow-clockwise"></i></button>
+      </div>
     </div>
   </div>
 </div>
