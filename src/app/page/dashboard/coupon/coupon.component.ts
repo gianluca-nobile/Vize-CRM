@@ -11,6 +11,7 @@ export class CouponComponent implements OnInit{
   columns: Array<object> | undefined
   coupons: any;
   topBarBtn: Array<any> = [];
+  loading: boolean | any = false;
 
   constructor(private request: RequestService) {
   }
@@ -79,10 +80,34 @@ export class CouponComponent implements OnInit{
   }
 
   getCoupon(){
-    console.log('get coupon')
+    this.loading = true;
     this.request.post('coupons/all', '').subscribe((res) => {
-      console.log(res)
+      console.log(res);
+      this.loading = false;
+    },(error) => {
+      console.log(error);
+      this.loading = error;
     })
+  }
+
+  editCoupon(index: number){
+    const coupon = this.coupons[index]
+    console.log(coupon)
+  }
+
+  deleteCoupon(index: number){
+    const coupon = this.coupons[index]
+    console.log(coupon)
+  }
+
+  switchTableEvent(event: any){
+    const index = event.index;
+    const action = event.action;
+    if (action === 'edit'){
+      this.editCoupon(index);
+    }else if (action === 'delete'){
+      this.deleteCoupon(index);
+    }
   }
 
 

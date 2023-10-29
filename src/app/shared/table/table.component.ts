@@ -9,12 +9,19 @@ export class TableComponent implements OnInit{
 
   @Input() columns: Array<object> | any;
   @Input() items: any;
-  @Output() edit = new EventEmitter();
-  @Output() delete = new EventEmitter();
-  @Output() enableDisable = new EventEmitter();
+  @Input() loading: any = false;
+  @Output() btnAction = new EventEmitter();
 
   ngOnInit(): void {
+  }
 
+  playAction(index: number, action: string, value?: any) {
+    const btnAction = {
+      index: index,
+      action: action,
+      value: value
+    }
+    this.btnAction.emit(btnAction)
   }
 
 }

@@ -10,58 +10,59 @@
           </tr>
           </thead>
           <tbody class="table__tbody text-center">
-          <ng-container *ngIf="items?.length > 0">
-            <!--          table-row&#45;&#45;red  da aggiungere al tr-->
-            <tr *ngFor="let item of items, let index = index" class="table-row">
-              <!--            <td class="table-row__td">-->
-              <!--              <div class="table-row__img"></div>-->
-              <!--              <div class="table-row__info">-->
-              <!--                <p class="table-row__name">Christin Ericssen</p>-->
-              <!--                <span class="table-row__small">CFO</span>-->
-              <!--              </div>-->
-              <!--            </td>-->
-              <!--            <td data-column="Policy" class="table-row__td">-->
-              <!--              <div class="">-->
-              <!--                <p class="table-row__policy">$5,000</p>-->
-              <!--                <span class="table-row__small">Basic Policy</span>-->
-              <!--              </div>-->
-              <!--            </td>-->
-              <!--            <td data-column="Policy status" class="table-row__td">-->
-              <!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
-              <!--            </td>-->
-              <ng-container *ngFor="let col of columns">
-                <td [attr.data-column]="col.name" class="table-row__td">
-                  <div class="d-flex justify-content-center">
-                    <ng-container *ngFor="let type of col.type" >
-                      <div *ngIf="type === 'boolean'">
-                        <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
-                      </div>
-                      <div *ngIf="type === 'enableDisable'">
-                        <button (click)="enableDisable.emit(index)" *ngIf="item[col.name] === false" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
+            <app-loading [loading]="loading"></app-loading>
+            <ng-container *ngIf="items?.length > 0 && loading === false">
+              <!--          table-row&#45;&#45;red  da aggiungere al tr-->
+              <tr *ngFor="let item of items, let index = index" class="table-row">
+                <!--            <td class="table-row__td">-->
+                <!--              <div class="table-row__img"></div>-->
+                <!--              <div class="table-row__info">-->
+                <!--                <p class="table-row__name">Christin Ericssen</p>-->
+                <!--                <span class="table-row__small">CFO</span>-->
+                <!--              </div>-->
+                <!--            </td>-->
+                <!--            <td data-column="Policy" class="table-row__td">-->
+                <!--              <div class="">-->
+                <!--                <p class="table-row__policy">$5,000</p>-->
+                <!--                <span class="table-row__small">Basic Policy</span>-->
+                <!--              </div>-->
+                <!--            </td>-->
+                <!--            <td data-column="Policy status" class="table-row__td">-->
+                <!--              <p class="table-row__p-status status&#45;&#45;green status">Approved</p>-->
+                <!--            </td>-->
+                <ng-container *ngFor="let col of columns">
+                  <td [attr.data-column]="col.name" class="table-row__td">
+                    <div class="d-flex justify-content-center">
+                      <ng-container *ngFor="let type of col.type" >
+                        <div *ngIf="type === 'boolean'">
+                          <p class="table-row__status status" [ngClass]="item[col.name]?'status--green': 'status--red'">{{item[col.name]?'Active':'Not Avtive'}}</p>
+                        </div>
+                        <div *ngIf="type === 'enableDisable'">
+                          <button (click)="playAction(index, 'disable')" *ngIf="item[col.name] === false" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash-circle-fill"></i></button>
 
-                        <button (click)="enableDisable.emit(index)" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
-                      </div>
-                      <div *ngIf="type === 'delete'">
-                        <button (click)="delete.emit(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
-                      </div>
-                      <div *ngIf="type === 'add'">
-                        <button (click)="delete.emit(index)" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-plus fa-2x"></i></button>
-                      </div>
-                      <div *ngIf="type === 'remove'">
-                        <button (click)="delete.emit(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash fa-2x"></i></button>
-                      </div>
-                      <div *ngIf="type === 'edit'">
-                        <button (click)="edit.emit(index)" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
-                      </div>
-                      <div *ngIf="type === 'string'">
-                        {{item[col.name]}}
-                      </div>
-                    </ng-container>
-                  </div>
-                </td>
-              </ng-container>
-            </tr>
-          </ng-container>
+                          <button (click)="playAction(index, 'enable')" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
+                        </div>
+                        <div *ngIf="type === 'delete'">
+                          <button (click)="playAction(index, 'delete')" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                        </div>
+                        <div *ngIf="type === 'add'">
+                          <button (click)="playAction(index, 'add')" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-plus fa-2x"></i></button>
+                        </div>
+                        <div *ngIf="type === 'remove'">
+                          <button (click)="playAction(index, 'remove')" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash fa-2x"></i></button>
+                        </div>
+                        <div *ngIf="type === 'edit'">
+                          <button (click)="playAction(index, 'edit')" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
+                        </div>
+                        <div *ngIf="type === 'string'">
+                          {{item[col.name]}}
+                        </div>
+                      </ng-container>
+                    </div>
+                  </td>
+                </ng-container>
+              </tr>
+            </ng-container>
           </tbody>
         </table>
         <ng-container *ngIf="items?.length === 0">

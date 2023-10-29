@@ -1,0 +1,20 @@
+<div *ngIf="loading === true">
+  <div class="spin dark-bg">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+  </div>
+</div>
+
+<div *ngIf="loading !== true && loading !== false" class="w-100">
+  <div class="alert alert-danger" role="alert">
+    <div class="d-flex">
+      <div class="d-flex justify-content-center align-items-center">
+        <i class="fas fa-exclamation-triangle fa-2x"></i>
+      </div>
+      <div class="d-flex ml-3 flex-column">
+        <span class="mt-1" [innerHTML]="loading"></span>
+      </div>
+    </div>
+  </div>
+</div>

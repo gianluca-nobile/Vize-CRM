@@ -1,2 +1,2 @@
 <app-top-bar [title]="'Coupon'" [buttons]="topBarBtn" [items]="coupons" (refresh)="getCoupon()"></app-top-bar>
-<app-table [columns]="columns" [items]="coupons"></app-table>
+<app-table [columns]="columns" [items]="coupons" [loading]="loading" (btnAction)="switchTableEvent($event)"></app-table>

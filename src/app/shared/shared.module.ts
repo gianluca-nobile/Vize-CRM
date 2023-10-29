@@ -5,13 +5,15 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
 import { TableComponent } from './table/table.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
     declarations: [
         SharedComponent,
         TableComponent,
-        TopBarComponent
+        TopBarComponent,
+        LoadingComponent
     ],
     exports: [
         TableComponent,

@@ -35,4 +35,24 @@ export class UserListComponent {
     ]
   }
 
+  addCreditsUser(index: number){
+    const user = this.userLists[index]
+    console.log(user)
+  }
+
+  removeCreditsUser(index: number){
+    const user = this.userLists[index]
+    console.log(user)
+  }
+
+  switchTableEvent(event: any){
+    const index = event.index;
+    const action = event.action;
+    if (action === 'add'){
+      this.addCreditsUser(index);
+    }else if (action === 'remove'){
+      this.removeCreditsUser(index);
+    }
+  }
+
 }
