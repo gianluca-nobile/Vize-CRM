@@ -85,7 +85,6 @@ export class CouponComponent implements OnInit{
       console.log(res);
       this.loading = false;
     },(error) => {
-      console.log(error);
       this.loading = error;
     })
   }
