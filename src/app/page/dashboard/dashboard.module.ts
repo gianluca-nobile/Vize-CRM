@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     imports: [
         CommonModule,
         DashboardRoutingModule,
-        SharedModule
+        SharedModule,
+        FormsModule
     ]
 })
 export class DashboardModule { }

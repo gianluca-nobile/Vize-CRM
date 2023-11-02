@@ -67,3 +67,10 @@ input{
   color: var(--success);
   border-color: var(--success);
 }
+
+.card{
+  height: 100%;
+  background: var(--card);
+  border: var(--border-card);
+  border-radius: 12px;
+}

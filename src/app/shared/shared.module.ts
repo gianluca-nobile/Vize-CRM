@@ -6,6 +6,7 @@ import { SharedComponent } from './shared.component';
 import { TableComponent } from './table/table.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoadingComponent } from './loading/loading.component';
+import {NotificationInfoComponent} from "./notification-info/notification-info.component";
 
 
 @NgModule({
@@ -13,12 +14,14 @@ import { LoadingComponent } from './loading/loading.component';
         SharedComponent,
         TableComponent,
         TopBarComponent,
-        LoadingComponent
+        LoadingComponent,
+        NotificationInfoComponent
     ],
     exports: [
         TableComponent,
         TopBarComponent,
-        LoadingComponent
+        LoadingComponent,
+        NotificationInfoComponent
     ],
     imports: [
         CommonModule,

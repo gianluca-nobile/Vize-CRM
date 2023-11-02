@@ -1,0 +1,10 @@
+<div class="toast close d-none">
+  <div class="toast-content toast-content-{{notificationMsg.type}}">
+    <i class="check" [ngClass]="getIconType(notificationMsg.type)"></i>
+    <div class="message">
+      <span *ngIf="notificationMsg.title" class="text text-1">{{notificationMsg.title}}</span>
+      <span *ngIf="notificationMsg.content" class="text text-2 mt-1">{{notificationMsg.content}}</span>
+    </div>
+  </div>
+  <div class="progress progress-{{notificationMsg.type}}"></div>
+</div>

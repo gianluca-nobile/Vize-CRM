@@ -232,7 +232,7 @@ GENERAL
 @media screen and (min-width: 992px){
   .table-container{
     background-color: var(--card);
-    border: var(--border-card-color);
+    border: var(--border-card);
     padding: 0 10px 10px;
     border-radius: 20px;
     max-height: 600px;

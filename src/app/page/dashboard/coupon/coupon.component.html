@@ -1,2 +1,32 @@
 <app-top-bar [title]="'Coupon'" [buttons]="topBarBtn" [items]="coupons" (refresh)="getCoupon()"></app-top-bar>
+<div class="collapse mt-4" id="addCoupon">
+  <div class="card p-4">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="code">Code</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="newCoupon.code" type="text" class="form-control" id="code" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="desc">Description</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="newCoupon.desc" type="text" class="form-control" id="desc" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="discount">Discount</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="newCoupon.discount" type="number" class="form-control" id="discount" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-between">
+          <button class="btn px-3 mr-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewCoupon()" data-toggle="collapse" data-target="#addCoupon">Cancel</button>
+          <button class="btn px-3 mr-3 btn-success" [disabled]="loadingAdd" (click)="addCoupon()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-table [columns]="columns" [items]="coupons" [loading]="loading" (btnAction)="switchTableEvent($event)"></app-table>
