@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RequestService} from "../../../services/request.service";
+import {RequestService} from "../../../services/request/request.service";
 
 @Component({
   selector: 'app-coupon',

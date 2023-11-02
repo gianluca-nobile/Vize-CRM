@@ -1,36 +1,39 @@
 <div class="container">
-  <main class="signup-container">
-    <h1 class="heading-primary">Log in<span class="span-blue">.</span></h1>
-    <p class="text-mute mb-5">Enter your credentials to access your account.</p>
-<!--    <div class="login-wrapper">-->
-<!--      <a href="#" class="btn btn-google">-->
-<!--        <img src="https://img.icons8.com/fluency/48/000000/google-logo.png" />-->
-<!--        Log In with Google-->
-<!--      </a>-->
-<!--      <div class="line-breaker">-->
-<!--        <span class="line"></span>-->
-<!--        <span>or</span>-->
-<!--        <span class="line"></span>-->
-<!--      </div>-->
-<!--    </div>-->
+  <app-loading [loading]="loading"></app-loading>
+  <ng-container *ngIf="loading === false">
+    <main class="signup-container">
+      <h1 class="heading-primary">Log in<span class="span-blue">.</span></h1>
+      <p class="text-mute mb-5">Enter your credentials to access your account.</p>
+      <!--    <div class="login-wrapper">-->
+      <!--      <a href="#" class="btn btn-google">-->
+      <!--        <img src="https://img.icons8.com/fluency/48/000000/google-logo.png" />-->
+      <!--        Log In with Google-->
+      <!--      </a>-->
+      <!--      <div class="line-breaker">-->
+      <!--        <span class="line"></span>-->
+      <!--        <span>or</span>-->
+      <!--        <span class="line"></span>-->
+      <!--      </div>-->
+      <!--    </div>-->
 
-    <div class="signup-form">
-      <label class="inp">
-        <input type="email" [(ngModel)]="loginForm.username" class="input-text" placeholder="&nbsp;">
-        <span class="label">Username</span>
-        <span class="input-icon"><i class="bi bi-person-fill"></i></span>
-      </label>
-      <label class="inp">
-        <input [type]="showPsw? 'text':'password'" [(ngModel)]="loginForm.password" class="input-text" placeholder="&nbsp;" id="password">
-        <span class="label">Password</span>
-        <span class="input-icon input-icon-password" data-password (click)="showPsw = !showPsw"><i [ngClass]="!showPsw? 'bi bi-eye-slash-fill':'bi bi-eye-fill'"></i></span>
-      </label>
-      <button (click)="login()" class="btn btn-login">Login</button>
+      <div class="signup-form">
+        <label class="inp">
+          <input type="email" [(ngModel)]="loginForm.username" class="input-text" placeholder="&nbsp;">
+          <span class="label">Username</span>
+          <span class="input-icon"><i class="bi bi-person-fill"></i></span>
+        </label>
+        <label class="inp">
+          <input [type]="showPsw? 'text':'password'" [(ngModel)]="loginForm.password" class="input-text" placeholder="&nbsp;" id="password">
+          <span class="label">Password</span>
+          <span class="input-icon input-icon-password" data-password (click)="showPsw = !showPsw"><i [ngClass]="!showPsw? 'bi bi-eye-slash-fill':'bi bi-eye-fill'"></i></span>
+        </label>
+        <button (click)="login()" class="btn btn-login">Login</button>
+      </div>
+      <!--    <p class="text-mute">Not a member? <a href="$">Sign up</a></p>-->
+    </main>
+    <div class="welcome-container">
+      <h1 class="heading-secondary w-100 text-center lg">Welcome to</h1>
+      <img src="assets/logo/vize-logo.png" alt="">
     </div>
-<!--    <p class="text-mute">Not a member? <a href="$">Sign up</a></p>-->
-  </main>
-  <div class="welcome-container">
-    <h1 class="heading-secondary w-100 text-center lg">Welcome to</h1>
-    <img src="assets/logo/vize-logo.png" alt="">
-  </div>
+  </ng-container>
 </div>

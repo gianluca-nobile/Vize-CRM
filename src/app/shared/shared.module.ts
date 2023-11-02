@@ -17,7 +17,8 @@ import { LoadingComponent } from './loading/loading.component';
     ],
     exports: [
         TableComponent,
-        TopBarComponent
+        TopBarComponent,
+        LoadingComponent
     ],
     imports: [
         CommonModule,

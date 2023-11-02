@@ -1,3 +1,10 @@
+.loadingContent{
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .spin {
   margin: 20px auto;
   width: 100%;

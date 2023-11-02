@@ -5,12 +5,11 @@
       <div class="table-container">
         <table class="table">
           <thead class="table__thead">
-          <tr class="text-center">
-            <th *ngFor="let col of columns" class="table__th">{{col.name}}</th>
-          </tr>
+            <tr class="text-center">
+              <th *ngFor="let col of columns" class="table__th">{{col.name}}</th>
+            </tr>
           </thead>
           <tbody class="table__tbody text-center">
-            <app-loading [loading]="loading"></app-loading>
             <ng-container *ngIf="items?.length > 0 && loading === false">
               <!--          table-row&#45;&#45;red  da aggiungere al tr-->
               <tr *ngFor="let item of items, let index = index" class="table-row">
@@ -65,6 +64,7 @@
             </ng-container>
           </tbody>
         </table>
+        <app-loading [loading]="loading"></app-loading>
         <ng-container *ngIf="items?.length === 0">
           <div class="alert alert-info w-100" role="alert">
             <b><i class="bi bi-info-circle-fill mr-2"></i>No item !</b>
