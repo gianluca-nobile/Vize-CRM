@@ -21,7 +21,7 @@ export class AuthInterceptor implements HttpInterceptor {
       authReq = req.clone({
         setHeaders: {
           Authorization: `Bearer ${authToken}`,
-          'Api-key': '!!*_VIZE_ADMIN_SECRET_COMPANY_API_TOKEN_1618*_!!',
+          'Api-key': '!!_*_VIZE_ADMIN_SECRET_COMPANY_API_TOKEN_1618_*_!!',
         }
       });
     }
