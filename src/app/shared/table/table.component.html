@@ -9,7 +9,7 @@
               <th *ngFor="let col of columns" class="table__th">{{('TABLE.' + col.name.toUpperCase()) | translate}}</th>
             </tr>
           </thead>
-          <tbody class="table__tbody text-center">
+          <tbody class="table__tbody text-center--">
             <ng-container *ngIf="items?.length > 0 && loading === false">
               <!--          table-row&#45;&#45;red  da aggiungere al tr-->
               <tr *ngFor="let item of items, let index = index" class="table-row">
