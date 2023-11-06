@@ -11,7 +11,7 @@ export class TableComponent implements OnInit{
   @Input() items: any;
   @Input() loading: any = false;
   @Output() btnAction = new EventEmitter();
-
+  selectIndex: number | any;
   ngOnInit(): void {
   }
 
@@ -22,6 +22,14 @@ export class TableComponent implements OnInit{
       value: value
     }
     this.btnAction.emit(btnAction)
+  }
+
+  confirmDelete(index: number){
+    this.selectIndex = index;
+    $('#confirmDeleteModal').modal({
+      backdrop: 'static',
+      keyboard: false
+    })
   }
 
 }

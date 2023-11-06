@@ -14,4 +14,8 @@ export class SessionService {
   getAuthToken(): {access_token: string, token_type: string} {
     return JSON.parse(localStorage.getItem('token')+'');
   }
+
+  clearStorage(){
+    localStorage.clear();
+  }
 }

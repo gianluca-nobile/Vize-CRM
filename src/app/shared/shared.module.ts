@@ -7,6 +7,8 @@ import { TableComponent } from './table/table.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoadingComponent } from './loading/loading.component';
 import {NotificationInfoComponent} from "./notification-info/notification-info.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
@@ -23,9 +25,11 @@ import {NotificationInfoComponent} from "./notification-info/notification-info.c
         LoadingComponent,
         NotificationInfoComponent
     ],
-    imports: [
-        CommonModule,
-        SharedRoutingModule
-    ]
+  imports: [
+    CommonModule,
+    SharedRoutingModule,
+    ReactiveFormsModule,
+    TranslateModule
+  ]
 })
 export class SharedModule { }

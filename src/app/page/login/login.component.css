@@ -217,3 +217,9 @@ a {
     display: none;
   }
 }
+
+.loader-container{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+}

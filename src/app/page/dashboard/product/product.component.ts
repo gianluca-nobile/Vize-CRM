@@ -4,21 +4,21 @@ import {NotificationService} from "../../../services/notification/notification.s
 import {TranslateService} from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-coupon',
-  templateUrl: './coupon.component.html',
-  styleUrls: ['./coupon.component.css']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
-export class CouponComponent implements OnInit{
+export class ProductComponent implements OnInit{
 
   columns: Array<object> | undefined
-  coupons: any;
+  products: any;
   topBarBtn: Array<any> = [];
   loading: boolean | any = false;
   loadingAdd: boolean | any = false;
   loadingEdit: boolean | any = false;
 
-  newCoupon: any = {code: '', discount: '', desc: ''};
-  selectedCoupon: any;
+  newProducts: any = {amount: '', credit: ''};
+  selectedProduct: any;
 
   constructor(private request: RequestService, private notify: NotificationService, private translate: TranslateService) {
   }
@@ -26,80 +26,79 @@ export class CouponComponent implements OnInit{
   ngOnInit(): void {
     this.generateColumn();
     this.generateTobBarBtn();
-    this.getCoupon();
+    this.getProducts();
   }
 
   generateTobBarBtn(){
-    this.topBarBtn.push({title: this.translate.instant('COUPON.ADD_COUPON'),  icon: 'bi bi-plus-lg', event_: () => this.openAddModal()});
+    this.topBarBtn.push({title: this.translate.instant('PRODUCT.ADD_PRODUCT'),  icon: 'bi bi-plus-lg', event_: () => this.openAddModal()});
   }
 
   generateColumn(){
     this.columns = [
       {name: 'id', type: ['string']},
-      {name: 'code', type: ['string']},
-      {name: 'discount', type: ['string']},
-      {name: 'desc', type: ['string']},
+      {name: 'amount', type: ['string']},
+      {name: 'credits', type: ['string']},
       {name: 'action', type: ['edit','delete']}
     ]
   }
 
   openAddModal(){
-    $('#addCoupon').collapse('show')
+    $('#addProducts').collapse('show')
   }
 
-  clearNewCoupon(){
-    this.newCoupon = {code: '', discount: '', desc: ''};
-    $('#addCoupon').collapse('toggle')
+  clearNewProducts(){
+    this.newProducts = {amount: '', credit: ''};
+    $('#addProducts').collapse('toggle')
   }
 
-  addCoupon(){
+  addProduct(){
     this.loadingAdd = true;
-    this.request.post('coupons/add-coupon', this.newCoupon).subscribe((res: any) => {
+    this.request.post('products/add-product', this.newProducts).subscribe((res: any) => {
       this.loadingAdd = false;
-      $('#addCoupon').collapse('toggle');
+      $('#addProducts').collapse('toggle');
       this.notify.notification.next({type: 'success', title: '', content: res.detail })
-      this.getCoupon();
+      this.getProducts();
     },(error) => {
       this.loadingAdd = false;
       this.notify.notification.next({type: 'danger', title: '', content: error })
     });
   }
 
-  getCoupon(){
+  getProducts(){
     this.loading = true;
-    this.request.post('coupons/all', '').subscribe((res) => {
-      this.coupons = res;
+    this.request.post('products/all', '').subscribe((res) => {
+      this.products = res;
       this.loading = false;
     },(error) => {
       this.loading = error;
     })
   }
 
-  openEditCoupon(index: number){
-    this.selectedCoupon = {...this.coupons[index]};
-    $('#editCouponModal').modal({
+  openEditProduct(index: number){
+    this.selectedProduct = {...this.products[index]};
+    $('#editProductModal').modal({
       backdrop: 'static',
       keyboard: false
-    });
+    });;
   }
 
-  editCoupon(){
+  editProduct(){
     this.loadingEdit = true;
-    this.request.post('coupons/update-coupon/' + this.selectedCoupon.id, this.selectedCoupon).subscribe((res: any) => {
+    this.request.post('products/product-coupon/' + this.selectedProduct.id, this.selectedProduct).subscribe((res: any) => {
       this.loadingEdit = false;
-      $('#editCouponModal').modal('hide');
+      $('#editProductModal').modal('hide');
       this.notify.notification.next({type: 'success', title: '', content: res.detail })
-      this.getCoupon();
+      this.getProducts();
     },(error) => {
       this.loadingEdit = false;
       this.notify.notification.next({type: 'danger', title: '', content: error })
     });
   }
 
-  deleteCoupon(index: number){
-    const coupon = this.coupons[index]
-    this.request.post('coupons/delete-coupon/' + coupon.id, '').subscribe((res: any) => {
-      this.getCoupon();
+  deleteProduct(index: number){
+    const product = this.products[index]
+    this.request.post('products/delete-product/' + product.id, '').subscribe((res: any) => {
+      this.getProducts();
       this.notify.notification.next({type: 'success', title: '', content: res.detail })
     },(error) => {
       this.notify.notification.next({type: 'danger', title: '', content: error })
@@ -110,12 +109,10 @@ export class CouponComponent implements OnInit{
     const index = event.index;
     const action = event.action;
     if (action === 'edit'){
-      this.openEditCoupon(index);
+      this.openEditProduct(index);
     }else if (action === 'delete'){
-      this.deleteCoupon(index);
+      this.deleteProduct(index);
     }
   }
-
-
 
 }

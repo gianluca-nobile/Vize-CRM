@@ -1,32 +1,73 @@
-<app-top-bar [title]="'Coupon'" [buttons]="topBarBtn" [items]="coupons" (refresh)="getCoupon()"></app-top-bar>
+<app-top-bar [title]="'Coupons'" [buttons]="topBarBtn" [items]="coupons" (refresh)="getCoupon()"></app-top-bar>
 <div class="collapse mt-4" id="addCoupon">
   <div class="card p-4">
     <div class="row">
       <div class="col-md-4">
-        <label for="code">Code</label>
+        <label for="code">{{'TABLE.CODE' | translate}}</label>
         <div class="input-group mb-3">
           <input [(ngModel)]="newCoupon.code" type="text" class="form-control" id="code" aria-describedby="basic-addon3">
         </div>
       </div>
       <div class="col-md-4">
-        <label for="desc">Description</label>
+        <label for="desc">{{'TABLE.DESC' | translate}}</label>
         <div class="input-group mb-3">
           <input [(ngModel)]="newCoupon.desc" type="text" class="form-control" id="desc" aria-describedby="basic-addon3">
         </div>
       </div>
       <div class="col-md-4">
-        <label for="discount">Discount</label>
+        <label for="discount">{{'TABLE.DISCOUNT' | translate}}</label>
         <div class="input-group mb-3">
           <input [(ngModel)]="newCoupon.discount" type="number" class="form-control" id="discount" aria-describedby="basic-addon3">
         </div>
       </div>
       <div class="col-12">
         <div class="d-flex justify-content-between">
-          <button class="btn px-3 mr-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewCoupon()" data-toggle="collapse" data-target="#addCoupon">Cancel</button>
-          <button class="btn px-3 mr-3 btn-success" [disabled]="loadingAdd" (click)="addCoupon()">Add</button>
+          <button class="more-btn btn px-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewCoupon()" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+          <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="addCoupon()"><span>{{'COMMON_ELEMENTS.EDIT' | translate}}</span></button>
         </div>
       </div>
     </div>
   </div>
 </div>
 <app-table [columns]="columns" [items]="coupons" [loading]="loading" (btnAction)="switchTableEvent($event)"></app-table>
+
+<!-- Edit coupon modal -->
+<div class="modal fade" id="editCouponModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{'COUPON.EDIT_COUPON' | translate}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="selectedCoupon = undefined">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-loading [loading]="loadingEdit"></app-loading>
+        <div *ngIf="selectedCoupon && loadingEdit === false;" class="row">
+          <div class="col-12">
+            <label for="EditCode">{{'TABLE.CODE' | translate}}</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="selectedCoupon.code" type="text" class="form-control" id="EditCode" aria-describedby="basic-addon3">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="EditDesc">{{'TABLE.DESC' | translate}}</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="selectedCoupon.desc" type="text" class="form-control" id="EditDesc" aria-describedby="basic-addon3">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="EditDiscount">{{'TABLE.DISCOUNT' | translate}}</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="selectedCoupon.discount" type="number" class="form-control" id="EditDiscount" aria-describedby="basic-addon3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" [disabled]="loadingAdd" (click)="selectedCoupon = undefined;" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="editCoupon()"><span>{{'COMMON_ELEMENTS.EDIT' | translate}}</span></button>
+      </div>
+    </div>
+  </div>
+</div>

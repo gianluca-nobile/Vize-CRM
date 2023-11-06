@@ -1,7 +1,7 @@
 <div class="row mt-4 top-bar-container">
   <div class="col-md-12">
     <div class="d-flex justify-content-between">
-      <h2 class="row__title">{{title}} ({{items?.length}})</h2>
+      <h2 class="row__title">{{('NAVBAR.' + title?.toUpperCase()) | translate}} ({{items?.length}})</h2>
       <div class="d-flex">
         <ng-container *ngIf="buttons">
           <ng-container *ngFor="let btn of buttons">
@@ -11,7 +11,7 @@
             </button>
           </ng-container>
         </ng-container>
-        <button (click)="refresh.emit()" class="btn btn-dark px-3"><i class="bi bi-arrow-clockwise"></i></button>
+        <button (click)="refresh.emit()" class="btn btn-dark px-3"><i class="bi bi-arrow-repeat"></i></button>
       </div>
     </div>
   </div>

@@ -1,4 +1,29 @@
 {
+  "COMMON_ELEMENTS":{
+    "NO": "No",
+    "YES": "Si",
+    "ADD": "Aggiungi",
+    "CANCEL": "Annulla",
+    "EDIT": "Modifica"
+  },
+  "NAVBAR": {
+    "ANALYTICS": "Statistiche",
+    "USERS": "Utenti",
+    "PRODUCTS": "Prodotti",
+    "COUPONS": "Coupon",
+    "LOGOUT": "Esci"
+  },
+  "USER_LIST": {
+
+  },
+  "PRODUCT": {
+    "ADD_PRODUCT": "Aggiungi prodotto",
+    "EDIT_PRODUCT": "Modifica prodotto"
+  },
+  "COUPON": {
+    "ADD_COUPON": "Aggiungi coupon",
+    "EDIT_COUPON": "Modifica coupon"
+  },
   "ERROR": {
     "TITLE": "Errore!",
     "BAD_GATEWAY": "Servizio momentaneamente non disponibile, ti preghiamo di riprovare più tardi",
@@ -58,5 +83,15 @@
     "TRANSCRIPTION_IS_PROGRESS": "La tua trascrizone è in corso",
     "TRANSCRIPTION_NOT_FOUND": "Trascrizone non trovata",
     "EMAIL_SENT_SUCCESSFULLY": "Email inviata con successo"
+  },
+  "TABLE": {
+    "DELETE_CONFIRM": "Sei sicuro di voler eliminare questo elemento?",
+    "ID": "ID",
+    "ACTION": "Azione",
+    "CODE": "Codice",
+    "DESC": "Descrizione",
+    "DISCOUNT": "Sconto",
+    "AMOUNT": "Importo",
+    "CREDITS": "Crediti"
   }
 }

@@ -1,5 +1,7 @@
 <div class="container">
-  <app-loading [loading]="loading"></app-loading>
+  <div class="loader-container">
+    <app-loading [loading]="loading"></app-loading>
+  </div>
   <ng-container *ngIf="loading === false">
     <main class="signup-container">
       <h1 class="heading-primary">Log in<span class="span-blue">.</span></h1>

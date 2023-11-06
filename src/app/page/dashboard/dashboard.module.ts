@@ -9,6 +9,8 @@ import { CouponComponent } from './coupon/coupon.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import {FormsModule} from "@angular/forms";
+import { ProductComponent } from './product/product.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     CouponComponent,
     UserListComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    ProductComponent
   ],
     imports: [
         CommonModule,
         DashboardRoutingModule,
         SharedModule,
-        FormsModule
+        FormsModule,
+        TranslateModule
     ]
 })
 export class DashboardModule { }

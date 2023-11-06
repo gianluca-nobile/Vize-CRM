@@ -1,0 +1,61 @@
+<app-top-bar [title]="'Products'" [buttons]="topBarBtn" [items]="products" (refresh)="getProducts()"></app-top-bar>
+<div class="collapse mt-4" id="addProducts">
+  <div class="card p-4">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="code">{{'TABLE.AMOUNT' | translate}}</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="newProducts.amount" type="number" class="form-control" id="code" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="desc">{{'TABLE.CREDITS' | translate}}</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="newProducts.credit" type="number" class="form-control" id="desc" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-between">
+          <button class="more-btn btn px-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewProducts()" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+          <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="addProduct()"><span>{{'COMMON_ELEMENTS.ADD' | translate}}</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-table [columns]="columns" [items]="products" [loading]="loading" (btnAction)="switchTableEvent($event)"></app-table>
+
+<!-- Edit coupon modal -->
+<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{'PRODUCT.EDIT_PRODUCT' | translate}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="selectedProduct = undefined">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-loading [loading]="loadingEdit"></app-loading>
+        <div *ngIf="selectedProduct && loadingEdit === false;" class="row">
+          <div class="col-12">
+            <label for="EditAmount">{{'TABLE.AMOUNT' | translate}}</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="selectedProduct.amount" type="text" class="form-control" id="EditAmount" aria-describedby="basic-addon3">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="EditCredits">{{'TABLE.CREDITS' | translate}}</label>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="selectedProduct.credits" type="text" class="form-control" id="EditCredits" aria-describedby="basic-addon3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" [disabled]="loadingAdd" (click)="selectedProduct = undefined;" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="editProduct()"><span>{{'COMMON_ELEMENTS.EDIT' | translate}}</span></button>
+      </div>
+    </div>
+  </div>
+</div>

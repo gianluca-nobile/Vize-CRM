@@ -5,7 +5,7 @@ GENERAL
 ----------------------------------------------------------*/
 
 .row__title{
-  color: #53646f;
+  color: var(--text-color2);
   font-weight: 400;
   font-size: 30px;
   margin: 0;

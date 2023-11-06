@@ -8,26 +8,19 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav w-100">
       <li class="nav-item mr-3" [ngClass]="this.route.url.includes('analytics')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/analytics" href="#"><i class="bi bi-clipboard2-data-fill mr-1"></i>Analytics</a>
+        <a class="nav-link" routerLink="/dashboard/analytics" href="#"><i class="bi bi-clipboard2-data-fill mr-1"></i>{{'NAVBAR.ANALYTICS' | translate}}</a>
       </li>
       <li class="nav-item mr-3" [ngClass]="this.route.url.includes('user-list')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/user-list" href="#"><i class="bi bi-person-lines-fill mr-1"></i>User List</a>
+        <a class="nav-link" routerLink="/dashboard/user-list" href="#"><i class="bi bi-person-lines-fill mr-1"></i>{{'NAVBAR.USERS' | translate}}</a>
+      </li>
+      <li class="nav-item mr-3" [ngClass]="this.route.url.includes('product')? 'active': ''">
+        <a class="nav-link" routerLink="/dashboard/product" href="#"><i class="bi bi-currency-dollar mr-1"></i>{{'NAVBAR.PRODUCTS' | translate}}</a>
       </li>
       <li class="nav-item mr-3" [ngClass]="this.route.url.includes('coupon')? 'active': ''">
-        <a class="nav-link" routerLink="/dashboard/coupon" href="#"><i class="bi bi-percent mr-1"></i>Coupon</a>
-      </li>
-      <li class="nav-item dropdown mr-3">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Logout</a>
-        </div>
+        <a class="nav-link" routerLink="/dashboard/coupon" href="#"><i class="bi bi-percent mr-1"></i>{{'NAVBAR.COUPONS' | translate}}</a>
       </li>
       <li class="nav-item ml-lg-auto mt-5 mt-lg-0">
-        <a class="nav-link" href="#"><i class="bi bi-box-arrow-right mr-1"></i><span class="d-lg-none">Logout</span></a>
+        <a class="nav-link" routerLink="" (click)="logout()" href="#"><i class="bi bi-box-arrow-right mr-1"></i><span class="d-lg-none">{{'NAVBAR.LOGOUT' | translate}}</span></a>
       </li>
     </ul>
   </div>

@@ -1,2 +1,2 @@
-<app-top-bar [title]="'User List'" [buttons]="topBarBtn" [items]="userLists" (refresh)="getUserList()"></app-top-bar>
+<app-top-bar [title]="'Users'" [buttons]="topBarBtn" [items]="userLists" (refresh)="getUserList()"></app-top-bar>
 <app-table [columns]="columns" [items]="userLists" (btnAction)="switchTableEvent($event)"></app-table>

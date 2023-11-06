@@ -74,3 +74,29 @@ input{
   border: var(--border-card);
   border-radius: 12px;
 }
+
+.more-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.more-btn span{
+  font-size: 14px;
+}
+
+.modal-content{
+  background: var(--card);
+  border: var(--border-card);
+  border-radius: 12px;
+}
+.modal-header{
+  border-bottom: none;
+}
+.modal-header .close{
+  color: var(--text-color2);
+}
+.modal-footer{
+  border-top: none;
+}

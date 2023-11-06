@@ -6,7 +6,7 @@
         <table class="table">
           <thead class="table__thead">
             <tr class="text-center">
-              <th *ngFor="let col of columns" class="table__th">{{col.name}}</th>
+              <th *ngFor="let col of columns" class="table__th">{{('TABLE.' + col.name.toUpperCase()) | translate}}</th>
             </tr>
           </thead>
           <tbody class="table__tbody text-center">
@@ -42,7 +42,7 @@
                           <button (click)="playAction(index, 'enable')" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
                         </div>
                         <div *ngIf="type === 'delete'">
-                          <button (click)="playAction(index, 'delete')" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                          <button (click)="confirmDelete(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
                         </div>
                         <div *ngIf="type === 'add'">
                           <button (click)="playAction(index, 'add')" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-plus fa-2x"></i></button>
@@ -75,4 +75,24 @@
   </div>
 
 
+</div>
+
+<!-- Edit coupon modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{'TABLE.DELETE_CONFIRM' | translate}}
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.NO' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-success" (click)="playAction(selectIndex, 'delete')"><span>{{'COMMON_ELEMENTS.YES' | translate}}</span></button>
+      </div>
+    </div>
+  </div>
 </div>
