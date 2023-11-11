@@ -16,7 +16,7 @@
       </div>
       <div class="col-12">
         <div class="d-flex justify-content-between">
-          <button class="more-btn btn px-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewProducts()" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+          <button class="more-btn btn px-3 btn-secondary" [disabled]="loadingAdd" (click)="clearNewProducts()" data-toggle="collapse" data-target="#addProducts"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
           <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="addProduct()"><span>{{'COMMON_ELEMENTS.ADD' | translate}}</span></button>
         </div>
       </div>
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-between">
-        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" [disabled]="loadingAdd" (click)="selectedProduct = undefined;" data-toggle="collapse" data-target="#addCoupon"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" [disabled]="loadingAdd" (click)="selectedProduct = undefined;"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
         <button class="more-btn btn px-3 btn-success" [disabled]="loadingAdd" (click)="editProduct()"><span>{{'COMMON_ELEMENTS.EDIT' | translate}}</span></button>
       </div>
     </div>
