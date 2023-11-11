@@ -14,4 +14,13 @@ export class MenuComponent {
   logout() {
     this.session.clearStorage();
   }
+
+  openSettings() {
+    $('#settingsModal').modal(
+      {
+        backdrop: 'static',
+        keyboard: false
+      }
+    );
+  }
 }

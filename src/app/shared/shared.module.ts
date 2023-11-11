@@ -9,22 +9,25 @@ import { LoadingComponent } from './loading/loading.component';
 import {NotificationInfoComponent} from "./notification-info/notification-info.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
+import {SettingsComponent} from "../page/settings/settings.component";
 
 
 @NgModule({
-    declarations: [
-        SharedComponent,
-        TableComponent,
-        TopBarComponent,
-        LoadingComponent,
-        NotificationInfoComponent
-    ],
-    exports: [
-        TableComponent,
-        TopBarComponent,
-        LoadingComponent,
-        NotificationInfoComponent
-    ],
+  declarations: [
+      SharedComponent,
+      TableComponent,
+      TopBarComponent,
+      LoadingComponent,
+      NotificationInfoComponent,
+      SettingsComponent
+  ],
+  exports: [
+      TableComponent,
+      TopBarComponent,
+      LoadingComponent,
+      NotificationInfoComponent,
+      SettingsComponent
+  ],
   imports: [
     CommonModule,
     SharedRoutingModule,
