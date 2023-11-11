@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RequestService} from "../../../services/request/request.service";
 import {NotificationService} from "../../../services/notification/notification.service";
 import {TranslateService} from "@ngx-translate/core";
+import {UtilsService} from "../../../services/utils/utils.service";
 
 @Component({
   selector: 'app-coupon',
@@ -20,7 +21,7 @@ export class CouponComponent implements OnInit{
   newCoupon: any = {code: '', discount: '', desc: ''};
   selectedCoupon: any;
 
-  constructor(private request: RequestService, private notify: NotificationService, private translate: TranslateService) {
+  constructor(private request: RequestService, private notify: NotificationService, private translate: TranslateService, private utils: UtilsService) {
   }
 
   ngOnInit(): void {
@@ -44,7 +45,8 @@ export class CouponComponent implements OnInit{
   }
 
   openAddModal(){
-    $('#addCoupon').collapse('show')
+    $('#addCoupon').collapse('show');
+    this.utils.scrollToTop();
   }
 
   clearNewCoupon(){

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {SessionService} from "../../services/session/session.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -11,4 +12,9 @@ export class TopBarComponent {
   @Input() items: any;
   @Output() refresh = new EventEmitter();
 
+  constructor(private session: SessionService ) {
+  }
+  logout() {
+    this.session.clearStorage();
+  }
 }

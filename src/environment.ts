@@ -1,5 +1,7 @@
 // environment.dev.ts
 export const environment = {
   production: false,
-  apiUrl: 'https://vize-backend.herokuapp.com/'
+  apiUrlDev: 'https://vize-backend.herokuapp.com/',
+  apiUrlProd: 'https://vize-backend-prod.herokuapp.com/admin/'
+
 };

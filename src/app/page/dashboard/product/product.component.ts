@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RequestService} from "../../../services/request/request.service";
 import {NotificationService} from "../../../services/notification/notification.service";
 import {TranslateService} from "@ngx-translate/core";
+import {UtilsService} from "../../../services/utils/utils.service";
 
 @Component({
   selector: 'app-product',
@@ -20,7 +21,7 @@ export class ProductComponent implements OnInit{
   newProducts: any = {amount: '', credit: ''};
   selectedProduct: any;
 
-  constructor(private request: RequestService, private notify: NotificationService, private translate: TranslateService) {
+  constructor(private request: RequestService, private notify: NotificationService, private translate: TranslateService, private utils: UtilsService) {
   }
 
   ngOnInit(): void {
@@ -43,7 +44,8 @@ export class ProductComponent implements OnInit{
   }
 
   openAddModal(){
-    $('#addProducts').collapse('show')
+    $('#addProducts').collapse('show');
+    this.utils.scrollToTop();
   }
 
   clearNewProducts(){

@@ -25,10 +25,16 @@ a {
   grid-template-columns: repeat(2, 50vw);
 }
 .heading-secondary {
-  font-size: 3rem;
+  font-size: 43px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: white;
 }
 .heading-primary {
-  font-size: 5rem;
+  font-size: 43px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: white;
 }
 .span-blue {
   color: var(--vz-primary);

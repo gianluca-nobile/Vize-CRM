@@ -9,7 +9,7 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
   getUrl() {
-    return environment.apiUrl;
+    return environment.apiUrlDev;
   }
 
   post(path: string, body: any){

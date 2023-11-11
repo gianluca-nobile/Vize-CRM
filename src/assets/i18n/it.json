@@ -4,13 +4,16 @@
     "YES": "Si",
     "ADD": "Aggiungi",
     "CANCEL": "Annulla",
-    "EDIT": "Modifica"
+    "EDIT": "Modifica",
+    "REFRESH": "Aggiorna",
+    "GO_TO_MENU": "Vai al menu"
   },
   "NAVBAR": {
     "ANALYTICS": "Statistiche",
     "USERS": "Utenti",
     "PRODUCTS": "Prodotti",
     "COUPONS": "Coupon",
+    "SETTINGS": "Impostazioni",
     "LOGOUT": "Esci"
   },
   "USER_LIST": {

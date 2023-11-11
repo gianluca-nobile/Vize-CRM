@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit{
     this.request.login(this.loginForm).subscribe((res: any) => {
       this.session.setAuthToken(res.token);
       this.loading = false;
-      this.route.navigate(['/dashboard/analytics']);
+      this.route.navigate(['/menu']);
     },(error) => {
       this.loading = false;
     })
