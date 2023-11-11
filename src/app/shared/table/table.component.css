@@ -234,7 +234,7 @@ GENERAL
     background-color: var(--card);
     border: var(--border-card);
     padding: 0 10px 10px;
-    border-radius: 20px;
+    border-radius: 12px;
     max-height: 600px;
     overflow: auto;
   }
@@ -253,7 +253,7 @@ GENERAL
     display: inline-block;
     border: 0;
     background-color:var(--card);
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 10px;
     width: calc(33.3% - 16px);
     margin-right: 10px;
@@ -305,7 +305,7 @@ GENERAL
 @media screen and (max-width: 680px){
   .table-row {
     width: calc(50% - 16px);
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 10px;
   }
 }
@@ -313,7 +313,7 @@ GENERAL
 @media screen and (max-width: 480px){
   .table-row {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 10px;
   }
 }
