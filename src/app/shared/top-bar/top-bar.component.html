@@ -10,7 +10,7 @@
       <div class="d-flex">
         <ng-container *ngIf="buttons">
           <ng-container *ngFor="let btn of buttons">
-            <button aria-expanded="false" class="more-btn btn px-3 mr-3" [ngClass]="btn.class? btn.class : 'btn-success'" (click)="btn.event_()">
+            <button aria-expanded="false" class="more-btn btn px-3 mr-3" [ngClass]="btn.class? btn.class : 'btn-success'" title="{{btn.title}}" (click)="btn.event_()">
               <i class="{{btn.icon}} mr-0 mr-md-2"></i>
               <span class="d-md-block d-none">{{btn.title}}</span>
             </button>

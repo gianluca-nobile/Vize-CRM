@@ -42,16 +42,16 @@
                           <button (click)="playAction(index, 'enable')" *ngIf="item[col.name]" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-check-circle-fill"></i></button>
                         </div>
                         <div *ngIf="type === 'delete'">
-                          <button (click)="confirmDelete(index)" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-trash3 fa-2x"></i></button>
+                          <button (click)="confirmDelete(index)" class="btn btn-outline-danger px-3 mx-1"  title="{{'COMMON_ELEMENTS.DELETE' | translate}}"><i class="bi bi-trash3 fa-2x"></i></button>
                         </div>
                         <div *ngIf="type === 'add'">
-                          <button (click)="playAction(index, 'add')" class="btn btn-outline-success px-3 mx-1"><i class="bi bi-plus fa-2x"></i></button>
+                          <button (click)="playAction(index, 'add')" class="btn btn-outline-success px-3 mx-1" title="{{'COMMON_ELEMENTS.ADD' | translate}}"><i class="bi bi-plus fa-2x"></i></button>
                         </div>
                         <div *ngIf="type === 'remove'">
-                          <button (click)="playAction(index, 'remove')" class="btn btn-outline-danger px-3 mx-1"><i class="bi bi-dash fa-2x"></i></button>
+                          <button (click)="playAction(index, 'remove')" class="btn btn-outline-danger px-3 mx-1" title="{{'COMMON_ELEMENTS.REMOVE' | translate}}"><i class="bi bi-dash fa-2x"></i></button>
                         </div>
                         <div *ngIf="type === 'edit'">
-                          <button (click)="playAction(index, 'edit')" class="btn btn-outline-warning px-3 mx-1"><i class="bi bi-pencil-fill"></i></button>
+                          <button (click)="playAction(index, 'edit')" class="btn btn-outline-warning px-3 mx-1" title="{{'COMMON_ELEMENTS.EDIT' | translate}}"><i class="bi bi-pencil-fill"></i></button>
                         </div>
                         <div *ngIf="type === 'string'">
                           {{item[col.name]}}
@@ -73,11 +73,9 @@
       </div>
     </div>
   </div>
-
-
 </div>
 
-<!-- Edit coupon modal -->
+<!-- Confirm delete modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
