@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {SessionService} from "../../services/session/session.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +9,12 @@ import {SessionService} from "../../services/session/session.service";
 })
 export class MenuComponent {
 
-  constructor(private session: SessionService) {
+  constructor(private session: SessionService, private route: Router) {
   }
 
   logout() {
     this.session.clearStorage();
+    this.route.navigate(['/login']);
   }
 
   openSettings() {

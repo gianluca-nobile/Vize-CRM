@@ -18,13 +18,9 @@ export class SessionService {
 
   clearStorage(){
     const lang = this.getSettings().lang;
-    const token = this.getAuthToken()
     localStorage.clear();
     if (lang){
       this.setSettings({lang: lang, environment: 'dev'});
-    }
-    if (token){
-      this.setAuthToken(token);
     }
   }
 
