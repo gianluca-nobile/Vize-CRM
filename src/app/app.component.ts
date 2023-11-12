@@ -19,7 +19,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     const lang = this.session.getSettings().lang;
-    console.log(lang)
     this.translate.use(lang);
   }
 }
