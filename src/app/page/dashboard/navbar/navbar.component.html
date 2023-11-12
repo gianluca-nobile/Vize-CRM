@@ -1,34 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between p-3">
-<!--  <button class="more-btn btn btn-dark px-3" routerLink="/menu">
-    <i class="bi bi-arrow-left" style="font-size: 16px"></i>
-  </button>
-  <button class="more-btn btn btn-dark px-3" routerLink="" (click)="logout()" title="{{'NAVBAR.LOGOUT' | translate}}">
-    <i class="bi bi-box-arrow-right" style="font-size: 16px"></i>
-  </button>-->
-
-  <!--  <a class="navbar-brand mr-5" href="#">-->
-<!--    <img src="assets/logo/vize-logo.png" alt="logo">-->
-<!--  </a>-->
-<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--    <span class="navbar-toggler-icon"></span>-->
-<!--  </button>-->
-<!--  <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
-<!--    <ul class="navbar-nav w-100">-->
-<!--      <li class="nav-item mr-3" [ngClass]="this.route.url.includes('analytics')? 'active': ''">-->
-<!--        <a class="nav-link" routerLink="/dashboard/analytics" href="#"><i class="bi bi-clipboard2-data-fill mr-1"></i>{{'NAVBAR.ANALYTICS' | translate}}</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item mr-3" [ngClass]="this.route.url.includes('user-list')? 'active': ''">-->
-<!--        <a class="nav-link" routerLink="/dashboard/user-list" href="#"><i class="bi bi-person-lines-fill mr-1"></i>{{'NAVBAR.USERS' | translate}}</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item mr-3" [ngClass]="this.route.url.includes('product')? 'active': ''">-->
-<!--        <a class="nav-link" routerLink="/dashboard/product" href="#"><i class="bi bi-currency-dollar mr-1"></i>{{'NAVBAR.PRODUCTS' | translate}}</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item mr-3" [ngClass]="this.route.url.includes('coupon')? 'active': ''">-->
-<!--        <a class="nav-link" routerLink="/dashboard/coupon" href="#"><i class="bi bi-percent mr-1"></i>{{'NAVBAR.COUPONS' | translate}}</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item ml-lg-auto mt-5 mt-lg-0">-->
-<!--        <a class="nav-link" routerLink="" (click)="logout()" href="#"><i class="bi bi-box-arrow-right mr-1"></i><span class="d-lg-none">{{'NAVBAR.LOGOUT' | translate}}</span></a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </div>-->
+<nav class="navbar navbar-expand-lg d-flex navbar-dark bg-dark justify-content-center p-3">
+  <ul class="navbar-nav d-flex justify-content-center">
+    <li class="nav-item mr-3" [ngClass]="this.route.url.includes('analytics')? 'active': ''">
+      <a class="nav-link" routerLink="/dashboard/analytics" href="#"><i class="bi bi-clipboard2-data-fill mr-1"></i>{{'NAVBAR.ANALYTICS' | translate}}</a>
+    </li>
+    <li class="nav-item mr-3" [ngClass]="this.route.url.includes('user-list')? 'active': ''">
+      <a class="nav-link" routerLink="/dashboard/user-list" href="#"><i class="bi bi-person-lines-fill mr-1"></i>{{'NAVBAR.USERS' | translate}}</a>
+    </li>
+    <li class="nav-item mr-3" [ngClass]="this.route.url.includes('product')? 'active': ''">
+      <a class="nav-link" routerLink="/dashboard/product" href="#"><i class="bi bi-currency-dollar mr-1"></i>{{'NAVBAR.PRODUCTS' | translate}}</a>
+    </li>
+    <li class="nav-item mr-3" [ngClass]="this.route.url.includes('coupon')? 'active': ''">
+      <a class="nav-link" routerLink="/dashboard/coupon" href="#"><i class="bi bi-percent mr-1"></i>{{'NAVBAR.COUPONS' | translate}}</a>
+    </li>
+  </ul>
 </nav>

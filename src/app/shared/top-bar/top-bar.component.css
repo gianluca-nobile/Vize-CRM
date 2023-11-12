@@ -3,7 +3,7 @@
   padding: 10px 0;
   border-bottom: 1px solid var(--border-card-color);
   border-top: 1px solid var(--border-card-color);
-  top: 0px;
+  top: 66px;
   z-index: 99;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
