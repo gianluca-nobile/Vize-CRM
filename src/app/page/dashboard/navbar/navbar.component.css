@@ -9,6 +9,9 @@
 .navbar-nav{
   flex-direction: row;
 }
+.active .nav-link{
+  color: var(--vz-primary);
+}
 .navbar-dark .navbar-nav .nav-link{
   font-size: 18px;
   display: flex;
