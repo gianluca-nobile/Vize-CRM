@@ -1,19 +1,70 @@
 <!-- Edit coupon modal -->
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal modal-xl fade" id="settingsModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">{{'NAVBAR.SETTINGS' | translate}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button (click)="this.selectedTab = 1;" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
+        <div class="tabs-container">
+          <ul class="tabs">
+            <li>
+              <a [ngClass]="selectedTab === 1? 'active':''" (click)="selectedTab = 1" title="Language">
+                <i class="bi bi-translate"></i>
+                {{'SETTINGS.LANG' | translate}}
+              </a>
+            </li>
+            <li>
+              <a [ngClass]="selectedTab === 2? 'active':''" (click)="selectedTab = 2" title="Configuration">
+                <i class="bi bi-sliders"></i>
+                {{'SETTINGS.CONFIGURATION' | translate}}
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content-wrapper">
+            <section *ngIf="selectedTab === 1" class="tab-content">
+              <h2>{{'SETTINGS.LANG' | translate}}</h2>
+              <div class="d-flex justify-content-center">
+                <div (click)="this.newSettings.lang = 'it'" class="box-lang d-flex flex-column justify-content-center mx-3">
+                  <div class="box-flag"><img src="assets/images/flags/it.png" alt=""></div>
+                  <span class="mt-1" [ngClass]="newSettings.lang === 'it'?'activeLang':''"></span>
+                </div>
+                <div (click)="this.newSettings.lang = 'en'" class="box-flag d-flex flex-column justify-content-center mx-3">
+                  <div class="box-flag"><img src="assets/images/flags/en.png" alt=""></div>
+                  <span class="mt-1" [ngClass]="newSettings.lang === 'en'?'activeLang':''"></span>
+                </div>
+                <div (click)="this.newSettings.lang = 'es'" class="box-flag d-flex flex-column justify-content-center mx-3">
+                  <div class="box-flag"><img src="assets/images/flags/es.png" alt=""></div>
+                  <span class="mt-1" [ngClass]="newSettings.lang === 'es'?'activeLang':''"></span>
+                </div>
+              </div>
+            </section>
+            <section *ngIf="selectedTab === 2" class="tab-content">
+              <h2>{{'SETTINGS.CONFIGURATION' | translate}}</h2>
+              <div>
+                <div class="form-check">
+                  <input (click)="newSettings.environment = 'prod'" class="form-check-input" type="checkbox" value="" id="defaultCheck1" [checked]="newSettings.environment === 'prod'">
+                  <label class="form-check-label  ml-2 mt-1" for="defaultCheck1">
+                    {{'SETTINGS.PROD' | translate}}
+                  </label>
+                </div>
+                <div class="form-check mt-2">
+                  <input (click)="newSettings.environment = 'dev'" class="form-check-input" type="checkbox" value="" id="defaultCheck2" [checked]="newSettings.environment === 'dev'">
+                  <label class="form-check-label  ml-2 mt-1" for="defaultCheck2">
+                    {{'SETTINGS.DEV' | translate}}
+                  </label>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
       <div class="modal-footer d-flex justify-content-between">
-        <button class="more-btn btn px-3 btn-secondary" data-dismiss="modal" data-toggle="collapse" data-target="#settingsModal"><span>{{'COMMON_ELEMENTS.CANCEL' | translate}}</span></button>
-        <button class="more-btn btn px-3 btn-success" ><span>{{'COMMON_ELEMENTS.SAVE' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-secondary" (click)="resetSettings();" data-dismiss="modal"><span>{{'SETTINGS.RESET_SETTINGS' | translate}}</span></button>
+        <button class="more-btn btn px-3 btn-success" [disabled]="this.checkDisable()" (click)="saveSettings()"><span>{{'COMMON_ELEMENTS.SAVE' | translate}}</span></button>
       </div>
     </div>
   </div>

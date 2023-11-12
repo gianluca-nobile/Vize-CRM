@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   setAuthToken(token: any){
     localStorage.setItem('token', JSON.stringify(token));
@@ -16,6 +17,33 @@ export class SessionService {
   }
 
   clearStorage(){
+    const lang = this.getSettings().lang;
+    const token = this.getAuthToken()
     localStorage.clear();
+    if (lang){
+      this.setSettings({lang: lang, environment: 'dev'});
+    }
+    if (token){
+      this.setAuthToken(token);
+    }
+  }
+
+  setSettings(settings: any){
+    const defaultSettings = {
+      lang: 'it',
+      environment: 'dev'
+    }
+    if (settings){
+      localStorage.setItem('settings', JSON.stringify(settings));
+    }else {
+      localStorage.setItem('settings', JSON.stringify(defaultSettings));
+    }
+  }
+
+  getSettings(){
+    if (!localStorage.getItem('settings')){
+      this.setSettings(null);
+    }
+    return JSON.parse(localStorage.getItem('settings')+'');
   }
 }

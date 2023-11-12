@@ -30,6 +30,7 @@
   },
   "ERROR": {
     "TITLE": "Errore!",
+    "NOT FOUND": "Richiesta non trovata",
     "BAD_GATEWAY": "Servizio momentaneamente non disponibile, ti preghiamo di riprovare più tardi",
     "INCORRECT_EMAIL_OR_PASSWORD": "Email/password non corrette. Per favore, verifica le tue credenziali e riprova",
     "CODE_EXPIRED": "Codice scaduto",
@@ -97,5 +98,12 @@
     "DISCOUNT": "Sconto",
     "AMOUNT": "Importo",
     "CREDITS": "Crediti"
+  },
+  "SETTINGS": {
+    "LANG": "Lingua",
+    "CONFIGURATION": "Configurazione",
+    "DEV": "API Development",
+    "PROD": "API production",
+    "RESET_SETTINGS": "Resetta impostazioni"
   }
 }

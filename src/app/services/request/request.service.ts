@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environment";
+import {SessionService} from "../session/session.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private session: SessionService) { }
 
   getUrl() {
-    return environment.apiUrlDev;
+    if(this.session.getSettings().environment === 'prod'){
+      return environment.apiUrlProd;
+    }else {
+      return environment.apiUrlDev;
+    }
   }
 
   post(path: string, body: any){

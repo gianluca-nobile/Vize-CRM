@@ -7,7 +7,7 @@ import { TableComponent } from './table/table.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoadingComponent } from './loading/loading.component';
 import {NotificationInfoComponent} from "./notification-info/notification-info.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
 import {SettingsComponent} from "../page/settings/settings.component";
 
@@ -32,7 +32,8 @@ import {SettingsComponent} from "../page/settings/settings.component";
     CommonModule,
     SharedRoutingModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule
   ]
 })
 export class SharedModule { }
