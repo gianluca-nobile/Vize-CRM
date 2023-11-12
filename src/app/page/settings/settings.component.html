@@ -20,7 +20,7 @@
             <li>
               <a [ngClass]="selectedTab === 2? 'active':''" (click)="selectedTab = 2" title="Configuration">
                 <i class="bi bi-sliders"></i>
-                {{'SETTINGS.CONFIGURATION' | translate}}
+                {{'SETTINGS.CONFIGURATIONS' | translate}}
               </a>
             </li>
           </ul>
@@ -43,7 +43,7 @@
               </div>
             </section>
             <section *ngIf="selectedTab === 2" class="tab-content">
-              <h2>{{'SETTINGS.CONFIGURATION' | translate}}</h2>
+              <h2>{{'SETTINGS.ENVIRONMENT' | translate}}</h2>
               <div>
                 <div class="form-check">
                   <input (click)="newSettings.environment = 'prod'" class="form-check-input" type="checkbox" value="" id="defaultCheck1" [checked]="newSettings.environment === 'prod'">

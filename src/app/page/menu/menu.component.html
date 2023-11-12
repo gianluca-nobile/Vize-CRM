@@ -15,7 +15,7 @@
             </div>
 
             <div class="hexagon-menu clear">
-              <div class="hexagon-item">
+              <div class="hexagon-item" routerLink="/dashboard/analytics">
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -26,7 +26,7 @@
                   <div></div>
                   <div></div>
                 </div>
-                <a class="hex-content" routerLink="/dashboard/analytics">
+                <a class="hex-content">
                   <span class="hex-content-inner">
                       <span class="icon">
                           <i class="bi bi-clipboard2-data-fill"></i>
@@ -41,7 +41,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="hexagon-item">
+              <div class="hexagon-item" routerLink="/dashboard/user-list">
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -52,7 +52,7 @@
                   <div></div>
                   <div></div>
                 </div>
-                <a class="hex-content" routerLink="/dashboard/user-list">
+                <a class="hex-content">
                   <span class="hex-content-inner">
                       <span class="icon">
                           <i class="bi bi-person-lines-fill"></i>
@@ -67,7 +67,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="hexagon-item">
+              <div class="hexagon-item" routerLink="/dashboard/product">
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -78,7 +78,7 @@
                   <div></div>
                   <div></div>
                 </div>
-                <a class="hex-content" routerLink="/dashboard/product">
+                <a class="hex-content">
                   <span class="hex-content-inner">
                       <span class="icon">
                           <i class="bi bi-currency-dollar"></i>
@@ -93,7 +93,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="hexagon-item">
+              <div class="hexagon-item" routerLink="/dashboard/coupon">
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -104,7 +104,7 @@
                   <div></div>
                   <div></div>
                 </div>
-                <a class="hex-content" routerLink="/dashboard/coupon">
+                <a class="hex-content">
                   <span class="hex-content-inner">
                       <span class="icon">
                           <i class="bi bi-percent"></i>
@@ -171,7 +171,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="hexagon-item">
+              <div class="hexagon-item" (click)="logout()">
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -182,7 +182,7 @@
                   <div></div>
                   <div></div>
                 </div>
-                <a class="hex-content" (click)="logout()">
+                <a class="hex-content">
                   <span class="hex-content-inner">
                       <span class="icon">
                           <i class="bi bi-box-arrow-right"></i>

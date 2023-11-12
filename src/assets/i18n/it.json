@@ -101,9 +101,10 @@
   },
   "SETTINGS": {
     "LANG": "Lingua",
-    "CONFIGURATION": "Configurazione",
+    "CONFIGURATIONS": "Configurazioni",
+    "ENVIRONMENT": "Ambiente",
     "DEV": "API Development",
     "PROD": "API production",
-    "RESET_SETTINGS": "Resetta impostazioni"
+    "RESET_SETTINGS": "Reset impostazioni"
   }
 }

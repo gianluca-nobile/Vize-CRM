@@ -16,7 +16,7 @@ header {
 
 .tab-content h2 {
   color: var(--text-color);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-top: 0px;
   margin-bottom: 8px;
@@ -40,6 +40,10 @@ header {
   gap: 8px;
 }
 
+.tabs li{
+  cursor: pointer;
+}
+
 .tabs a {
   position: relative;
   display: flex;
@@ -47,7 +51,7 @@ header {
   width: 100%;
   font-size: 14px;
   font-weight: 600;
-  color: var(--border-card-color);
+  color: var(--text-color3);
   text-align: left;
   border-radius: 8px;
   justify-content: start;
@@ -65,13 +69,13 @@ header {
 .tabs .active, .tabs a:hover {
   font-weight: 700;
   outline: none;
-  color: white;
+  color: var(--text-color2);
   background-color: var(--card);
 }
 
 
 .tabs a i {
-  stroke: var(--border-card-color);
+  stroke: var(--text-color3);
 }
 
 .tabs .active i {
@@ -79,7 +83,7 @@ header {
 }
 
 .tabs a:hover i {
-  stroke: var(--text-color);
+  stroke: var(--text-color2);
 }
 
 
